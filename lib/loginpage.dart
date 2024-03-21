@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:dtbuku059/homepage.dart';
+import 'package:kuis_123210059/homepage.dart';
 
 
 class LoginPage extends StatefulWidget {
@@ -11,7 +11,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPage extends State<LoginPage> {
   
-  final userController = TextEditingController();
+  final emailController = TextEditingController();
   final passController = TextEditingController();
 
   Widget _usernameField(){
@@ -19,9 +19,9 @@ class _LoginPage extends State<LoginPage> {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical:10),
         child: TextFormField(
             enabled: true,
-            controller: userController,
+            controller: emailController,
             decoration: const InputDecoration(
-                hintText:  'Email',
+                hintText:  'Email "restiana@gmail.com"',
                 contentPadding: EdgeInsets.all(8.0), 
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(8.0)),
@@ -40,7 +40,7 @@ class _LoginPage extends State<LoginPage> {
             obscureText: true,
             controller: passController,
             decoration: const InputDecoration(
-                hintText:  'Password',
+                hintText:  'Password "restiana"',
                 contentPadding: EdgeInsets.all(8.0), 
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(8.0)),
@@ -57,7 +57,7 @@ class _LoginPage extends State<LoginPage> {
         width: MediaQuery.of(context).size.width,
         child: ElevatedButton(
             onPressed: () {
-                if(userController.text == "restiana@gmail.com" && passController.text == "restiana" ){
+                if(emailController.text == "restiana@gmail.com" && passController.text == "restiana" ){
                    Navigator.push(context, MaterialPageRoute(builder: (context){
                     return const HomePage();
                    }));
